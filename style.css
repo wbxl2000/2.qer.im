@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+div {
+  /* border: 1px solid black; */
+}
+
+.main {
+  /* padding: 1rem; */
+  margin: 0 auto;
+}
+
+.item {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin-bottom: 2rem; */
+  /* border: 1px solid #aaa; */
+  border-bottom: 1px solid #eee;
+  /* border-radius: .5rem; */
+  padding: 1rem;
+}
+
+.item-body {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.body-info {
+  margin-right: -6rem;
+  padding-right: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-header {
+  margin-right: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.description {
+  margin-right: 6rem;
+  padding: .5rem 0 0 0;
+  opacity: .6;
+  text-align: justify;
+}
+
+.title {
+  font-weight: bold;
+  color: black;
+  font-size: 1.25rem;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #008489;
+  /* opacity: .5; */
+}
+
+.id {
+  opacity: .6;
+  margin-left: .5rem;
+}
+
+.body-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: .5rem;
+  background: url('./qwq1.png');
+  background-size: cover;
+}
+
+.item-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modify-time {
+  opacity: .6;
+}
+
+.tag {
+  border-radius: 1rem;
+  padding: 0rem .75rem;
+  color: #484848;
+  background: #f3f3f3;
+}
+
+.quality {
+  background: #eaf7ea;
+  color: #2a6e00;
+}
