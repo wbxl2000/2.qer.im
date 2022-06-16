@@ -17,8 +17,7 @@ div {
 }
 
 .item {
-  width: 100%;
-  height: 8rem;
+  height: 9rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,7 +54,7 @@ div {
 
 .description {
   margin-right: 6rem;
-  padding: .5rem 0 0 0;
+  padding: .5rem 0 .5rem 0;
   opacity: .6;
   text-align: justify;
 }
