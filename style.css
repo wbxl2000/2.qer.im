@@ -21,23 +21,21 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-bottom: 2rem; */
-  /* border: 1px solid #aaa; */
   border-bottom: 1px solid #eee;
-  /* border-radius: .5rem; */
   padding: 1rem;
+  width: auto;
 }
 
 .item-body {
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .body-info {
-  margin-right: -6rem;
+  margin-right: -7rem;
   padding-right: 1rem;
   width: 100%;
   height: 100%;
@@ -46,17 +44,22 @@ div {
 }
 
 .info-header {
-  margin-right: 6rem;
+  margin-right: 7rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .description {
-  margin-right: 6rem;
-  padding: .5rem 0 .5rem 0;
+  margin-right: 7rem;
+  padding: .5rem 0 .3rem 0;
   opacity: .6;
   text-align: justify;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title {
@@ -78,8 +81,8 @@ div {
 }
 
 .body-image {
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: .5rem;
   background: url('./qwq1.png');
   background-size: cover;
@@ -89,6 +92,7 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  white-space: nowrap;
 }
 
 .modify-time {
