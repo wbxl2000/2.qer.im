@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/qwq1.png">
   <link href="./style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.js"></script>
   <title>qer杂货铺</title>
 </head>
 
@@ -26,7 +28,11 @@
             右上角磕掉一个小茬，胶水粘上了，不注意看不到。已经不能开机使用了，只能作为陈列展示。
           </div>
         </div>
-        <div class="body-image">
+        <div class="body-image" id="galley">
+          <ul class="pictures">
+            <li><img class="img-preview" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+            <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+          </ul>
         </div>
       </div>
       <div class="item-bottom">
@@ -52,7 +58,11 @@
             右上角磕掉一个小茬，胶水粘上了，不注意看不到。已经不能开机使用了，只能作为陈列展示。
           </div>
         </div>
-        <div class="body-image">
+        <div class="body-image" id="galley">
+          <ul class="pictures">
+            <li><img class="img-preview" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+            <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+          </ul>
         </div>
       </div>
       <div class="item-bottom">
@@ -68,3 +78,22 @@
 </body>
 
 </html>
+
+
+<script>
+  var galley = document.getElementById('galley');
+  var viewer = new Viewer(galley, {
+    url: 'data-original',
+    toolbar: {
+      prev: function () {
+        viewer.prev(true);
+      },
+      next: function () {
+        viewer.next(true);
+      },
+    },
+    title: function (image) {
+      return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+    },
+  });
+</script>
