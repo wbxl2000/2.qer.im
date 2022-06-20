@@ -30,7 +30,7 @@
         </div>
         <div class="body-image" id="galley">
           <ul class="pictures">
-            <li><img class="img-preview" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+            <li><img class="img-preview img-show" data-original="./qwq2.jpeg" src="./qwq2.jpeg" alt="Cuo Na Lake"></li>
             <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
           </ul>
         </div>
@@ -58,9 +58,9 @@
             右上角磕掉一个小茬，胶水粘上了，不注意看不到。已经不能开机使用了，只能作为陈列展示。
           </div>
         </div>
-        <div class="body-image" id="galley">
+        <div class="body-image">
           <ul class="pictures">
-            <li><img class="img-preview" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
+            <li><img class="img-preview img-show" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
             <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
           </ul>
         </div>
@@ -81,19 +81,29 @@
 
 
 <script>
-  var galley = document.getElementById('galley');
-  var viewer = new Viewer(galley, {
-    url: 'data-original',
-    toolbar: {
-      prev: function () {
-        viewer.prev(true);
-      },
-      next: function () {
-        viewer.next(true);
-      },
-    },
-    title: function (image) {
-      return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
-    },
-  });
+  const imageContainer = document.getElementsByClassName('img-show');
+  let viewer = null;
+  let viewerList = [];
+  for (let i = 0; i < imageContainer.length; i++) {
+    const galley = imageContainer[i].parentNode.parentNode.parentNode;
+    imageContainer[i].addEventListener('click', function (e, x) {
+      if (!viewerList[i]) {
+        viewerList[i] = new Viewer(galley, {
+          url: 'data-original',
+          toolbar: {
+            prev: function () {
+              viewer.prev(true);
+            },
+            next: function () {
+              viewer.next(true);
+            },
+          },
+          title: function (image) {
+            return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+          },
+        });
+      }
+      viewer = viewerList[i];
+    });
+  }
 </script>
