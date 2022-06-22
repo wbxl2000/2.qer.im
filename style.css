@@ -17,6 +17,7 @@ div {
   min-width: 315px;
   max-width: 35rem;
   padding: 1rem;
+  padding-top: 3.3rem;
 }
 
 .item {
@@ -87,7 +88,7 @@ div {
   width: 7rem;
   height: 7rem;
   border-radius: .5rem;
-  background: url('./qwq1.png');
+  background: url('./sample1.png');
   background-size: cover;
   cursor: pointer;
 }
@@ -117,9 +118,17 @@ li {
   opacity: .6;
 }
 
+.tags {
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
 .tag {
   border-radius: 1rem;
   padding: 0rem .75rem;
+  margin-right: .25rem;
   color: #484848;
   background: #f3f3f3;
 }
@@ -130,10 +139,29 @@ li {
 }
 
 .header {
+  min-width: 315px;
+  max-width: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: fixed;
+  padding: .5rem 0rem;
+  top: 0;
+  height: 2.3rem;
+  z-index: 40;
+  backdrop-filter: blur(20px);
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
 }
 
 .category {
@@ -147,12 +175,12 @@ li {
 
 .category-select {
   font-weight: bold;
-  border: 2px solid black;
+  border: 1px solid black;
   background: #f3f3f3;
 }
 
 .footer {
-  margin-top: 5rem;
+  margin-top: 2rem;
   text-align: center;
 }
 

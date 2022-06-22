@@ -5,79 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/qwq1.png">
+  <link rel="icon" type="image/x-icon" href="./images/sample1.png">
   <link href="./style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.5/viewer.min.js"></script>
-  <title>qer杂货铺</title>
+  <script src="./data.js" type="application/javascript"></script>
+  <title> qer杂货铺 </title>
 </head>
 
 <body>
   <div class="main">
-    <div class="header">
-      <span class="category category-select">全部</span>
-      <span class="category">#撒大苏打</span>
-      <span class="category">#撒大苏打</span>
+    <div id="categories" class="header">
     </div>
-    <div class="item">
-      <div class="item-body">
-        <div class="body-info">
-          <div class="info-header">
-            <span class="left">
-              <span class="title"> DELL显示器</span>
-              <span class="id"> #001 </span>
-            </span>
-            <span class="price"> ￥25</span>
-          </div>
-          <div class="description">
-            右上角磕掉一个小茬，胶水粘上了，不注意看不到。已经不能开机使用了，只能作为陈列展示。
-          </div>
-        </div>
-        <div class="body-image" id="galley">
-          <ul class="pictures">
-            <li><img class="img-preview img-show" data-original="./qwq2.jpeg" src="./qwq2.jpeg" alt="Cuo Na Lake"></li>
-            <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="item-bottom">
-        <div class="tags">
-          <span class="tag quality">9成新</span>
-          <span class="tag">#撒大苏打</span>
-          <span class="tag">#撒大苏打</span>
-        </div>
-        <div class="modify-time"> 2022/6/15 13:14</div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-body">
-        <div class="body-info">
-          <div class="info-header">
-            <span class="left">
-              <span class="title"> DELL显示器</span>
-              <span class="id"> #001 </span>
-            </span>
-            <span class="price"> ￥25</span>
-          </div>
-          <div class="description">
-            右上角磕掉一个小茬，胶水粘上了，不注意看不到。已经不能开机使用了，只能作为陈列展示。
-          </div>
-        </div>
-        <div class="body-image">
-          <ul class="pictures">
-            <li><img class="img-preview img-show" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
-            <li><img class="img-preview img-hide" data-original="./qwq1.png" src="./qwq1.png" alt="Cuo Na Lake"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="item-bottom">
-        <div class="tags">
-          <span class="tag quality">9成新</span>
-          <span class="tag">#撒大苏打</span>
-          <span class="tag">#撒大苏打</span>
-        </div>
-        <div class="modify-time"> 2022/6/15 13:14</div>
-      </div>
+    <div id="item-content">
     </div>
     <div class="footer">
       <span class="footer-text"> design inspired by </span>
@@ -107,30 +47,5 @@
 </html>
 
 
-<script>
-  const imageContainer = document.getElementsByClassName('img-show');
-  let viewer = null;
-  let viewerList = [];
-  for (let i = 0; i < imageContainer.length; i++) {
-    const galley = imageContainer[i].parentNode.parentNode.parentNode;
-    imageContainer[i].addEventListener('click', function (e, x) {
-      if (!viewerList[i]) {
-        viewerList[i] = new Viewer(galley, {
-          url: 'data-original',
-          toolbar: {
-            prev: function () {
-              viewer.prev(true);
-            },
-            next: function () {
-              viewer.next(true);
-            },
-          },
-          title: function (image) {
-            return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
-          },
-        });
-      }
-      viewer = viewerList[i];
-    });
-  }
+<script src="./main.js">
 </script>

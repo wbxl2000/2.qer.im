@@ -4,6 +4,7 @@
 
 - [x] 图片预览
 - [x] header
-- [ ] footer
+- [x] footer
 - [ ] 多选+导出
 - [ ] 搜索
+- [ ] refactor 类别变化部分
