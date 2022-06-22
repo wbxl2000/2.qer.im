@@ -89,6 +89,7 @@ div {
   border-radius: .5rem;
   background: url('./qwq1.png');
   background-size: cover;
+  cursor: pointer;
 }
 
 .img-preview {
@@ -148,4 +149,32 @@ li {
   font-weight: bold;
   border: 2px solid black;
   background: #f3f3f3;
+}
+
+.footer {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer-text {
+  opacity: .5;
+}
+
+.link {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.link:hover {
+  opacity: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.github-svg svg {
+  margin: auto;
+  opacity: .5;
 }
