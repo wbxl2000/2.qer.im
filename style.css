@@ -18,7 +18,7 @@ div {
   min-width: 315px;
   max-width: 35rem;
   padding: 1rem;
-  padding-top: 5rem;
+  padding-top: 6rem;
 }
 
 .item {
@@ -155,6 +155,7 @@ li {
   z-index: 40;
   backdrop-filter: blur(20px);
   background: #fff;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
 
