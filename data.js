@@ -25,7 +25,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打3"],
+    "tags": ["撒大苏打", "撒大苏打3", "sold out"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"

@@ -9,8 +9,9 @@ function freshList() {
   let itemsHTML = "";
   salesItemData.forEach(itemData => {
     const { title, id, price, description, pictures, quality, tags, time } = itemData;
+    if (tags.includes("sold out")) return;
     const isExisted = tags.some(tag => {
-      return selectList.includes(tag) || selectList.includes("全部");
+      return (selectList.includes(tag) || selectList.includes("全部"));
     });
     if (!isExisted) return;
     let picturesHTML = "";
