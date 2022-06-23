@@ -94,7 +94,6 @@ div {
   width: 7rem;
   height: 7rem;
   border-radius: .5rem;
-  background: url('./sample1.png');
   background-size: cover;
   cursor: pointer;
 }
