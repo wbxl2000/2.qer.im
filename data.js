@@ -9,7 +9,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打2", "大苏打25", "大苏打26", "上大四大1"],
+    "tags": ["test-item", "撒大苏打2", "大苏打25", "大苏打26", "上大四大1"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"
@@ -25,7 +25,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打3", "sold out"],
+    "tags": ["test-item", "撒大苏打3", "sold out"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"
@@ -41,7 +41,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打3"],
+    "tags": ["test-item", "撒大苏打3"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"
@@ -57,7 +57,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打3"],
+    "tags": ["test-item", "撒大苏打4"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"
@@ -73,7 +73,7 @@ const salesItemData = [
       "./images/sample2.jpeg",
     ],
     "quality": "9成新",
-    "tags": ["撒大苏打", "撒大苏打3"],
+    "tags": ["test-item", "撒大苏打3"],
     "time": {
       "created": "2022/6/15 13:14",
       "modify": "2022/6/15 13:14"
