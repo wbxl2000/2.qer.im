@@ -12,15 +12,17 @@ div {
 }
 
 .main {
-  /* padding: 1rem; */
+  padding: 1rem;
   margin: 0 auto;
+  /* border: 1px solid black; */
   min-width: 315px;
   max-width: 35rem;
   padding: 1rem;
-  padding-top: 3.3rem;
+  padding-top: 5rem;
 }
 
 .item {
+  /* border: 1px solid red; */
   height: 9rem;
   display: flex;
   flex-direction: column;
@@ -28,6 +30,10 @@ div {
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
   width: auto;
+}
+
+.item-select {
+  background: #eee;
 }
 
 .item-body {
@@ -131,6 +137,7 @@ li {
   margin-right: .25rem;
   color: #484848;
   background: #f3f3f3;
+  /* cursor: pointer; */
 }
 
 .quality {
@@ -142,21 +149,52 @@ li {
   min-width: 315px;
   max-width: 35rem;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  flex-direction: column;
   position: fixed;
-  padding: .5rem 0rem;
   top: 0;
-  height: 2.3rem;
+  height: 5rem;
   z-index: 40;
   backdrop-filter: blur(20px);
   background: #fff;
   border-bottom: 1px solid #eee;
+}
+
+.export-panel {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  justify-content: space-between;
+}
+
+#toast {
+  margin: auto 0;
+  overflow-x: scroll;
+}
+
+#categories {
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: .5rem 0rem;
+  cursor: pointer;
+}
+
+button {
+  color: #406bb4;
+  border: 0px;
+  background-color: transparent;
+  margin: .5rem 0 .5rem 1rem;
+  font-size: bold;
+  cursor: pointer;
+}
+
+#cancel {
+  display: none;
+}
+
+#export {
+  display: none;
 }
 
 ::-webkit-scrollbar {
@@ -170,7 +208,7 @@ li {
   text-align: center;
   border: 1px solid #b0acab;
   margin-right: .5rem;
-  cursor: pointer;
+  cursor: pointe--r;
 }
 
 .category-select {

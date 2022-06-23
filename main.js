@@ -25,7 +25,7 @@ function freshList() {
       tagsHTML += `<span class="tag">${tag}</span>`;
     });
     const item = `
-      <div class="item">
+      <div class="item" id=${id}>
         <div class="item-body">
           <div class="body-info">
             <div class="info-header">
@@ -121,4 +121,57 @@ for (let i = 0; i < categoryElements.length; i++) {
   }
 }
 
+// 多选和导出
+const cache = JSON.parse(localStorage.getItem("selectItem")) || [];
+let selectItem = new Set(cache);
+function freshSelectItem() {
+  const itemElements = document.getElementsByClassName("item");
+  let itemElementsIds = [];
+  for (let i = 0; i < itemElements.length; i++) {
+    itemElementsIds.push(itemElements[i].id);
+    if (selectItem.has(itemElements[i].id)) itemElements[i].classList.add("item-select");
+    else itemElements[i].classList.remove("item-select");
+  }
+  selectItem.forEach(item => {
+    if (!itemElementsIds.find(x => x == item)) {
+      selectItem.delete(item);
+    }
+  });
+  localStorage.setItem("selectItem", JSON.stringify(Array.from(selectItem)));
+}
+
+let isSelecting = false;
+document.getElementById("select").addEventListener("click", () => {
+  document.getElementById("select").style.display = "none";
+  document.getElementById("cancel").style.display = "inline";
+  document.getElementById("export").style.display = "inline";
+  freshSelectItem();
+  const itemElements = document.getElementsByClassName("item");
+  for (let i = 0; i < itemElements.length; i++) {
+    itemElements[i].onclick = () => {
+      if (!selectItem.has(itemElements[i].id)) selectItem.add(itemElements[i].id);
+      else selectItem.delete(itemElements[i].id);
+      freshSelectItem();
+    }
+  }
+});
+
+document.getElementById("cancel").addEventListener("click", () => {
+  document.getElementById("select").style.display = "inline";
+  document.getElementById("cancel").style.display = "none";
+  document.getElementById("export").style.display = "none";
+});
+
+document.getElementById("export").addEventListener("click", () => {
+  console.log(Array.from(selectItem));
+  let itemString = "";
+  selectItem.forEach(item => {
+    itemString += '';
+  });
+  navigator.clipboard.writeText(JSON.stringify(Array.from(selectItem))).then(() => {
+    document.getElementById("toast").innerHTML = "已复制到剪切板，发送给 qer 吧~"
+  });
+});
+
 freshList();
+
