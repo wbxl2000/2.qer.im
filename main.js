@@ -174,5 +174,12 @@ document.getElementById("export").addEventListener("click", () => {
   });
 });
 
+// 链接：https://juejin.cn/post/6974018969690734628 横向滚动
+const categoriesDiv = document.getElementById("categories");
+categoriesDiv.addEventListener('wheel', (event) => {
+  event.preventDefault()
+  categoriesDiv.scrollLeft += event.deltaY
+})
+
 freshList();
 

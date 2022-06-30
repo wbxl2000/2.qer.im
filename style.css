@@ -173,11 +173,17 @@ li {
 
 #categories {
   text-align: center;
-  white-space: nowrap;
-  overflow-x: scroll;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  list-style: none;
   overflow-y: hidden;
+  overflow-x: scroll;
   padding: .5rem 0rem;
   cursor: pointer;
+  scroll-padding-left: 1rem;
+  /* Same as gutter */
+  scroll-snap-type: x mandatory;
 }
 
 button {
@@ -208,7 +214,8 @@ button {
   text-align: center;
   border: 1px solid #b0acab;
   margin-right: .5rem;
-  cursor: pointe--r;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .category-select {
