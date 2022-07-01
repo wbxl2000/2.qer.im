@@ -207,6 +207,10 @@ button {
   display: none;
 }
 
+#import {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
   /* Chrome Safari */
@@ -254,4 +258,56 @@ a {
 .github-svg svg {
   margin: auto;
   opacity: .5;
+}
+
+#gray {
+  background-color: black;
+  opacity: .5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 41;
+  display: none;
+}
+
+.popup-body {
+  padding: 0 2rem;
+}
+
+#popup {
+  width: 70%;
+  height: 16rem;
+  position: fixed;
+  left: 15%;
+  top: 25%;
+  background-color: white;
+  z-index: 42;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+#popup-close {
+  text-align: right;
+  padding: 0.5rem 0.8rem 0.5rem 0.5rem;
+  font-size: 1.5rem;
+  opacity: .8;
+  cursor: pointer;
+}
+
+#popup-input {
+  margin: 1.5rem 0;
+  height: 2rem;
+  width: 100%;
+  border: 1px solid #999;
+}
+
+#popup-import {
+  height: 2rem;
+  width: 100%;
+  background: #008489;
+  color: white;
+  margin: 0;
 }

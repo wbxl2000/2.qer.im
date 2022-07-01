@@ -126,6 +126,7 @@ for (let i = 0; i < categoryElements.length; i++) {
 const cache = JSON.parse(localStorage.getItem("selectItem")) || [];
 let selectItem = new Set(cache);
 function freshSelectItem() {
+  console.log(selectItem);
   const itemElements = document.getElementsByClassName("item");
   let itemElementsIds = [];
   for (let i = 0; i < itemElements.length; i++) {
@@ -140,12 +141,14 @@ function freshSelectItem() {
   });
   localStorage.setItem("selectItem", JSON.stringify(Array.from(selectItem)));
 }
-
+// ["1","3","4"]
 let isSelecting = false;
 document.getElementById("select").addEventListener("click", () => {
+  document.getElementById("toast").innerHTML = "【选择模式】";
   document.getElementById("select").style.display = "none";
   document.getElementById("cancel").style.display = "inline";
   document.getElementById("export").style.display = "inline";
+  document.getElementById("import").style.display = "inline";
   freshSelectItem();
   const itemElements = document.getElementsByClassName("item");
   for (let i = 0; i < itemElements.length; i++) {
@@ -158,19 +161,28 @@ document.getElementById("select").addEventListener("click", () => {
 });
 
 document.getElementById("cancel").addEventListener("click", () => {
+  document.getElementById("toast").innerHTML = "";
   document.getElementById("select").style.display = "inline";
   document.getElementById("cancel").style.display = "none";
   document.getElementById("export").style.display = "none";
+  document.getElementById("import").style.display = "none";
+  // 去掉选中的样式
+  const itemElements = document.getElementsByClassName("item");
+  for (let i = 0; i < itemElements.length; i++) {
+    itemElements[i].classList.remove("item-select");
+  }
+});
+
+document.getElementById("import").addEventListener("click", () => {
+  document.getElementById("gray").style.display = "block";
+  document.getElementById("popup").style.display = "block";
 });
 
 document.getElementById("export").addEventListener("click", () => {
   console.log(Array.from(selectItem));
-  let itemString = "";
-  selectItem.forEach(item => {
-    itemString += '';
-  });
   navigator.clipboard.writeText(JSON.stringify(Array.from(selectItem))).then(() => {
-    document.getElementById("toast").innerHTML = "已复制到剪切板，发送给 qer 吧~"
+    document.getElementById("cancel").click();
+    document.getElementById("toast").innerHTML = "已复制到剪切板，发送给 qer 吧~";
   });
 });
 
@@ -178,8 +190,21 @@ document.getElementById("export").addEventListener("click", () => {
 const categoriesDiv = document.getElementById("categories");
 categoriesDiv.addEventListener('wheel', (event) => {
   event.preventDefault()
-  categoriesDiv.scrollLeft += event.deltaY
+  categoriesDiv.scrollLeft += event.deltaY;
 })
 
 freshList();
+
+// popup
+document.getElementById("popup-close").addEventListener('click', () => {
+  document.getElementById("gray").style.display = "none";
+  document.getElementById("popup").style.display = "none";
+})
+
+document.getElementById("popup-import").addEventListener('click', () => {
+  const inputValue = document.getElementById("popup-input").value;
+  selectItem = new Set(JSON.parse(inputValue));
+  freshSelectItem();
+  document.getElementById("popup-close").click();
+})
 
