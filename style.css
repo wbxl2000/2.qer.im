@@ -154,7 +154,7 @@ li {
   left: 1rem;
   /* https://stackoverflow.com/questions/14019488/widthauto-and-fixed-position */
   right: 1rem;
-  height: 5rem;
+  height: 5.5rem;
   z-index: 40;
   margin: 0 auto;
   backdrop-filter: blur(20px);
